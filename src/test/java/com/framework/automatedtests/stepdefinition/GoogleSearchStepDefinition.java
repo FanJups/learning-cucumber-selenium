@@ -1,12 +1,11 @@
 package com.framework.automatedtests.stepdefinition;
 
+import static com.framework.automatedtests.modules.Hooks.driver;
 import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,13 +13,9 @@ import io.cucumber.java.en.When;
 
 public class GoogleSearchStepDefinition {
 
-    WebDriver driver;
-
     @Given("I open google search page")
     public void iOpenGoogleSearchPage() {
 
-	System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-	driver = new ChromeDriver();
 	driver.get("https://www.google.com/");
     }
 
@@ -49,8 +44,6 @@ public class GoogleSearchStepDefinition {
     public void searchResultsDisplayTheWord(String string) {
 
 	assertTrue(driver.getTitle().contains(string));
-
-	driver.quit();
 
     }
 

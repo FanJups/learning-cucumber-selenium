@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 
 	strict = true, plugin = { "pretty", "json:target/json/results.json" }, features = {
-		"src/test/resources/features" }, glue = {
+		"src/test/resources/features" }, glue = { "com.framework.automatedtests.modules",
 			"com.framework.automatedtests.stepdefinition" }, tags = { "" })
 public class TestRunner {
 
