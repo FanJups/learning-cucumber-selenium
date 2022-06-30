@@ -3,7 +3,7 @@
   <groupId>com.framework</groupId>
   <artifactId>automatedtests</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>AutomatedTests</name>
+  <name>Automated Tests</name>
   <description>Tests Framework with Cucumber and Selenium</description>
   
     <properties>

@@ -1,4 +1,4 @@
-package com.framework.automatedtests;
+package com.framework.automatedtests.stepdefinition;
 
 import static org.junit.Assert.assertTrue;
 
@@ -19,7 +19,7 @@ public class GoogleSearchStepDefinition {
     @Given("I open google search page")
     public void iOpenGoogleSearchPage() {
 
-	System.setProperty("webdriver.chrome.driver", "src/test/java/com/framework/automatedtests/chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.get("https://www.google.com/");
     }
