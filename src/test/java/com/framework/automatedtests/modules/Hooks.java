@@ -1,9 +1,10 @@
 package com.framework.automatedtests.modules;
 
+import static com.framework.automatedtests.utils.BrowserFactory.getFactoryDriver;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.framework.automatedtests.pageobjects.GoogleSearchPage;
@@ -24,9 +25,7 @@ public class Hooks {
     @Before
     public void setUp() {
 
-	System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-	driver = new ChromeDriver();
-
+	driver = getFactoryDriver();
 	/*
 	 * Without this line, it's not sure that the search button will be clicked.
 	 * Sometimes it works, sometimes not. When not working, we get

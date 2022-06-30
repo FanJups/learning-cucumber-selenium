@@ -18,6 +18,7 @@ public class GoogleSearchStepDefinition {
 
     @When("I lookup the word {string}")
     public void iLookupTheWord(String string) {
+
 	searchFor(string);
 
     }
