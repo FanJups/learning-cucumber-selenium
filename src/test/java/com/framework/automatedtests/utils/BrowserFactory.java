@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 /*
  * configure browsers
@@ -22,12 +23,14 @@ public class BrowserFactory {
     static boolean isheadless = Boolean.parseBoolean(configurationMap.get("isheadless"));
 
     public static WebDriver getFactoryDriver() {
+    	
+    	String driverPath="src/test/resources/drivers/";
 
 	switch (webBrowserType) {
 
 	case "chrome":
 
-	    System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+	    System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
 
 	    /*
 	     * Command Line Switches
@@ -63,7 +66,12 @@ public class BrowserFactory {
 	    break;
 
 	case "ie":
+		System.setProperty("webdriver.ie.driver", driverPath + "IEDriverServer.exe");
+		
+		factoryDriver= new InternetExplorerDriver();
+
 	    break;
+	    
 	case "firefox":
 	    break;
 
